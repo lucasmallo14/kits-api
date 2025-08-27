@@ -1,0 +1,25 @@
+name = "kits-api"
+main = "src/api.ts"
+compatibility_date = "2025-08-15"
+compatibility_flags = ["nodejs_compat"]
+
+# R2: WAVs subidos por usuarios (lo creamos en el paso 4)
+[[r2_buckets]]
+binding = "WAVS_IN"
+bucket_name = "kits-in"
+
+# KV: estados de jobs (lo creamos en el paso 4)
+[[kv_namespaces]]
+binding = "JOB_STATUS"
+id = "<TU_KV_ID>"
+
+# Producer de la Queue (la creamos en el paso 4)
+[[queues.producers]]
+binding = "CLONE_JOBS"
+queue = "clone-jobs"
+
+[vars]
+# Dominio del Bot Worker que ya tenés (sirve /file/<key>)
+BOT_PUBLIC_BASE = "https://kits-clone-bot.lucasmallo.workers.dev"
+# CORS: durante pruebas podés dejar "*" o tu origen local
+PUBLIC_ORIGINS = "http://localhost:3000,http://localhost:5173"

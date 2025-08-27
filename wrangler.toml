@@ -11,7 +11,9 @@ bucket_name = "kits-in"
 # KV: estados de jobs (lo creamos en el paso 4)
 [[kv_namespaces]]
 binding = "JOB_STATUS"
-id = "<TU_KV_ID>"
+id = "ba3182b2901f4a309d8c79b4b73771bd"
+preview_id = "ba3182b2901f4a309d8c79b4b73771bd"
+
 
 # Producer de la Queue (la creamos en el paso 4)
 [[queues.producers]]
